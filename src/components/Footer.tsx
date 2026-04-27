@@ -52,6 +52,7 @@ const Footer = () => {
         <p>Built for the underground</p>
       </div>
     </footer>
+    
   );
 };
 
