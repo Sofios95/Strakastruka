@@ -41,7 +41,7 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <a href="https://www.instagram.com/strakastruka.music.joint/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 text-sm hover:text-white transition-colors">Instagram</a>
               <a href="https://www.facebook.com/strakastruka" target="_blank" rel="noopener noreferrer" className="text-zinc-400 text-sm hover:text-white transition-colors">Facebook</a>
-              <a href="https://untappd.com/v/strakastruka/8197711" target="_blank" rel="noopener noreferrer" className="text-zinc-400 text-sm hover:text-white transition-colors">Untappd</a>
+              <a href="https://untappd.com/v/strakastrueka/9574712" target="_blank" rel="noopener noreferrer" className="text-zinc-400 text-sm hover:text-white transition-colors">Untappd</a>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Footer = () => {
         <p>Built for the underground</p>
       </div>
     </footer>
-    
+
   );
 };
 
