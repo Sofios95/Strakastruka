@@ -89,12 +89,12 @@ export default function Menu() {
       {/* Footer του Menu */}
       <div className="text-center mt-20 border-t-4 border-black pt-12 flex flex-col items-center">
         <img 
-          src="/strakastuka-logo.jpg" 
+          src="/strakastruka-logo.jpg" 
           alt="logo" 
           className="h-16 object-contain mb-4 grayscale" 
         />
         <p className="font-industrial text-2xl uppercase italic tracking-[0.2em]">
-          strakastrüka
+          Strakastrüka
         </p>
         <p className="text-[10px] uppercase tracking-[0.5em] mt-2 font-black opacity-30 italic">
           Music Joint / Athens

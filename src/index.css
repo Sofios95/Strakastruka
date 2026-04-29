@@ -1,14 +1,27 @@
 @import "tailwindcss";
 
-/* 1. Ορισμός CSS Μεταβλητών & Γραμματοσειρών */
+/* 1. ΓΡΑΜΜΑΤΟΣΕΙΡΕΣ & THEME */
 @theme {
-  --font-industrial: "Anton", sans-serif;
+  --font-rubber: "RubberB", sans-serif;
+  --font-anton: "Anton", sans-serif;
   --font-script: "Yellowtail", cursive;
+  
+  /* Alias για να μη σπάσει ο παλιός κώδικας */
+  --font-industrial: "RubberB", sans-serif;
 }
 
 @layer base {
+  @font-face {
+    font-family: 'RubberB';
+    /* Χρησιμοποιούμε το absolute path για το Vite */
+    src: url('/src/assets/fonts/RubberB-Regular.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
   html {
-    font-size: 18px; /* Μεγαλύτερη βάση για όλο το site */
+    font-size: 18px;
     @apply scroll-smooth;
   }
 
@@ -21,21 +34,19 @@
   }
 }
 
-/* 2. Custom Utilities */
+/* 2. CUSTOM UTILITIES */
 @layer utilities {
-  /* Εφέ περιγράμματος για τα "Raw" γράμματα */
   .text-outline-white {
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
   }
 
-  /* Industrial Noise Effect (SVG Data URI για να μην "πέφτει" ποτέ) */
   .bg-noise {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 }
 
-/* 3. Animations (Glitch & Chaos) */
+/* 3. ANIMATIONS */
 @keyframes glitch {
   0% { transform: translate(0); }
   20% { transform: translate(-3px, 3px); }
@@ -44,34 +55,27 @@
   80% { transform: translate(3px, -3px); }
   100% { transform: translate(0); }
 }
+.animate-glitch { animation: glitch 0.25s cubic-bezier(.25,.46,.45,.94) both infinite; }
 
-.animate-glitch {
-  animation: glitch 0.25s cubic-bezier(.25,.46,.45,.94) both infinite;
+/* 4. UNTAPPD WIDGET FIXES */
+.untappd-menu-header, .untappd-section-header, .untappd-menu-updated {
+    display: none !important;
 }
 
-/* Subtler glitch για το background ή δευτερεύοντα στοιχεία */
-@keyframes glitch-subtle {
-  0% { opacity: 1; }
-  50% { opacity: 0.8; transform: scale(1.005); }
-  100% { opacity: 1; }
+#menu-container .untappd-menu {
+    background: transparent !important;
+    border: none !important;
+    padding-top: 0 !important;
 }
 
-.animate-glitch-subtle {
-  animation: glitch-subtle 0.1s infinite;
+#menu-container * {
+    font-family: var(--font-anton) !important;
 }
 
-/* 4. Custom Component Styles */
+/* 5. UI ELEMENTS */
 .selection\:bg-white ::selection {
   background-color: white;
   color: black;
 }
-
-/* Smooth transition για τις εικόνες της Gallery */
-img {
-  @apply transition-all duration-700 ease-in-out;
-}
-
-/* Industrial Divider */
-.hr-industrial {
-  @apply h-[2px] bg-white opacity-20 w-full;
-}
+img { @apply transition-all duration-700 ease-in-out; }
+.hr-industrial { @apply h-[2px] bg-white opacity-20 w-full; }

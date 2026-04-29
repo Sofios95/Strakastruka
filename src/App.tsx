@@ -7,9 +7,9 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 import UntappdMenu from './components/UntappdMenu';
-import Menu from './components/Menu';
+import Menu from './components/Menu'; // <-- Εδώ εισάγουμε το αρχείο με τα Cocktails
 
-// Helper component για να ξεκινάει η σελίδα από την κορυφή σε κάθε αλλαγή route
+// Helper για να ξεκινάει η σελίδα από πάνω
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -18,34 +18,32 @@ const ScrollToTop = () => {
   return null;
 };
 
-// --- HOME PAGE LAYOUT ---
+// --- Home Page (Hero + Gallery) ---
 const Home = () => (
-  <>
+  <main>
     <Hero />
     <Gallery />
-  </>
+  </main>
 );
 
-// --- MENU PAGE LAYOUT ---
+// --- Menu Page (Beers + Cocktails) ---
 const MenuPage = () => (
-  <div className="pt-16 md:pt-24 bg-black"> 
-    {/* Το padding (pt) εξασφαλίζει ότι το περιεχόμενο δεν θα κρύβεται πίσω από τον Navbar */}
+  <main className="pt-20 bg-white min-h-screen">
+    {/* 1. Το Widget με τις Μπύρες */}
     <UntappdMenu />
-    <section id="static-menu" className="bg-white text-black relative z-30">
-      <Menu />
-    </section>
-  </div>
+    
+    {/* 2. Ο κατάλογος με Cocktails/Spirits */}
+    <Menu />
+  </main>
 );
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black scroll-smooth overflow-x-hidden">
-        
-        {/* Ο Navbar και το Footer είναι έξω από τα Routes για να εμφανίζονται παντού */}
+      <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
         <Navbar />
-
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<MenuPage />} />
