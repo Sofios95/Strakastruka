@@ -18,22 +18,22 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black/60 z-10"></div>
 
       <div className="relative z-20 w-full max-w-[1800px] mx-auto">
-        <h1 className="uppercase italic flex flex-col items-start select-none">
-          {/* STRAKASTRÜKA: Πιο μαζεμένο, θυμίζει το logo2 */}
+        <h1 className="flex flex-col items-start select-none">
+          {/* STRAKASTRÜKA: Πεζά γράμματα για αυθεντικό logo vibe */}
           <div className="flex flex-col leading-[0.8] tracking-[-0.07em] drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-            <span className="font-rubber text-[8vw] md:text-[6vw] text-white opacity-100">
+            <span className="font-rubber text-[10vw] md:text-[8vw] text-white opacity-100 italic lowercase">
               strakastrüka
             </span>
           </div>
           
-          {/* Music Joint */}
-          <span className="font-anton text-white opacity-40 text-[4vw] md:text-[1.5vw] mt-4 tracking-[0.5em]">
+          {/* MUSIC JOINT: Uppercase για contrast */}
+          <span className="font-anton text-white opacity-40 text-[4vw] md:text-[1.5vw] mt-4 tracking-[0.5em] uppercase">
             MUSIC JOINT
           </span>
         </h1>
 
         <div className="mt-12 md:mt-16 flex flex-col items-start gap-8">
-          <div className="h-[2px] w-16 bg-[#ffcc00] opacity-80"></div>
+          {/* Η κίτρινη γραμμή αφαιρέθηκε όπως ζήτησες πριν, αν τη θες την επαναφέρεις */}
           
           <h2 className="font-anton text-zinc-400 text-[12px] md:text-[16px] tracking-[0.3em] uppercase max-w-sm leading-relaxed">
             Exarcheia • Athens <br /> Craft Beer & Raw Sounds

@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           href={isHomePage ? "#gallery" : "/#gallery"} 
           className="font-anton text-[13px] md:text-[15px] tracking-[0.4em] uppercase text-white hover:text-[#ffcc00] transition-colors"
         >
-          Chaos
+          Contact
         </a>
       </div>
     </nav>

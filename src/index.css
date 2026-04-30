@@ -79,3 +79,15 @@
 }
 img { @apply transition-all duration-700 ease-in-out; }
 .hr-industrial { @apply h-[2px] bg-white opacity-20 w-full; }
+/* Εξαφανίζει το header του Untappd (λογότυπο, διεύθυνση, όνομα μαγαζιού) */
+#ut-menu .ut-menu-header, 
+.ut-menu-header,
+.untappd-header {
+    display: none !important;
+}
+
+/* Εξαφανίζει την ημερομηνία ενημέρωσης (Updated on...) */
+#ut-menu .ut-menu-updated,
+.ut-menu-updated {
+    display: none !important;
+}
