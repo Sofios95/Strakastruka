@@ -13,15 +13,15 @@ const menuData: MenuCategory[] = [
   {
     category: "COCKTAILS",
     items: [
-      { name: "MARGARITA", price: "9€", info: "TEQUILA, TRIPLE SEC, LIME JUICE, AGAVE SYRUP, SALTED RIM, SLICE LIME" },
-      { name: "PALOMA", price: "9€", info: "TEQUILA, LIME JUICE, GRAPEFRUIT SODA, SLICE LIME, SALTED RIM" },
-      { name: "MOHITO", price: "9€", info: "RUM, LIME (HALF), MINT LEAVES, DARK SUGAR, SODA, SLICE LIME, BITTER DROPS" },
-      { name: "CAIPIRINHA", price: "9€", info: "CACHACA, LIME (HALF), DARK SUGAR, SLICE LIME, BITTER DROPS" },
-      { name: "CAIPIROSKA", price: "9€", info: "VODKA, HALF A LIME, DARK SYRUP, SLICE LIME" },
-      { name: "PINK APEROL", price: "9€", info: "APEROL, LIME JUICE, GRAPEFRUIT SODA, SLICE ORANGE, BITTER DROP" },
-      { name: "OLD FASHIONED", price: "9€", info: "BOURBON, SUGAR CUBE, BITTER DROPS, ORANGE PEEL" },
-      { name: "MAI TAI", price: "9€", info: "LIGHT RUM, DARK RUM, TRIPLE SEC, ALMOND SYRUP, LIME JUICE, LIME+LEMON PEEL, BITTER DROPS" },
-      { name: "NEGRONI", price: "9€", info: "GIN, CAMPARI, VERMOUTH, ORANGE PEEL, BITTER DROPS" },
+      { name: "MARGARITA", price: "9€", info: "(TEQUILA, TRIPLE SEC, LIME JUICE, AGAVE SYRUP, SALTED RIM, SLICE LIME)" },
+      { name: "PALOMA", price: "9€", info: "(TEQUILA, LIME JUICE, GRAPEFRUIT SODA, SLICE LIME, SALTED RIM)" },
+      { name: "MOHITO", price: "9€", info: "(RUM, HALF A LIME, MINT LEAVES, DARK SUGAR, SODA, SLICE LIME, BITTER DROPS)" },
+      { name: "CAIPIRINHA", price: "9€", info: "(CACHACA, HALF A LIME, DARK SUGAR, SLICE LIME, BITTER DROPS)" },
+      { name: "CAIPIROSKA", price: "9€", info: "(VODKA, HALF A LIME, DARK SYRUP, SLICE LIME)" },
+      { name: "PINK APEROL", price: "9€", info: "(APEROL, LIME JUICE, GRAPEFRUIT SODA, SLICE ORANGE, BITTER DROPS)" },
+      { name: "OLD FASHIONED", price: "9€", info: "(BOURBON, SUGAR CUBE, BITTER DROPS, ORANGE PEEL)" },
+      { name: "MAI TAI", price: "9€", info: "(LIGHT RUM, DARK RUM, TRIPLE SEC, ALMOND SYRUP, LIME JUICE, LIME, LEMON PEEL, BITTER DROPS)" },
+      { name: "NEGRONI", price: "9€", info: "(GIN, CAMPARI, VERMOUTH, ORANGE PEEL, BITTER DROPS)" },
     ]
   },
   {
@@ -93,8 +93,8 @@ export default function Menu() {
           alt="logo" 
           className="h-16 object-contain mb-4 grayscale" 
         />
-        <p className="font-industrial text-2xl uppercase italic tracking-[0.2em]">
-          Strakastrüka
+        <p className="font-industrial text-2xl lowercase italic tracking-[0.2em]">
+          strakastrüka
         </p>
         <p className="text-[10px] uppercase tracking-[0.5em] mt-2 font-black opacity-30 italic">
           Music Joint / Athens

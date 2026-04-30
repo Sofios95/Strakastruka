@@ -35,7 +35,7 @@ const UntappdMenu = () => {
               ON TAP
             </h2>
             <h2 className="font-rubber text-[7vw] md:text-[3.5vw] text-black/30 uppercase italic tracking-tighter leading-none">
-              & BOTTLES
+              & BOTTLES/CANS
             </h2>
           </div>
           
