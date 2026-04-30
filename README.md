@@ -1,73 +1,30 @@
-# React + TypeScript + Vite
+# 🚀 Strakastruka Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Strakastruka** is a high-performance, modern web application built with a focus on speed, type-safety, and a utility-first design approach. This project serves as a showcase of modern frontend workflows and best practices.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **Framework:** [React](https://react.dev/) (v18+)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/) for robust, type-safe code.
+*   **Build Tool:** [Vite](https://vitejs.dev/) for lightning-fast development and optimized builds.
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/) for a modern, responsive, and utility-first UI.
+*   **Linting:** [ESLint](https://eslint.org/) with strict type-aware rules.
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Fast Refresh:** Leverages Vite’s HMR (Hot Module Replacement) for a seamless dev experience.
+*   **Type Safety:** Interfaces and Types throughout the application to minimize runtime errors.
+*   **Responsive UI:** Fully fluid design that works perfectly on everything from mobile phones to ultra-wide monitors.
+*   **Optimized Performance:** Minimal bundle size and optimized asset loading.
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/yourusername/strakastruka.git](https://github.com/yourusername/strakastruka.git)
+   cd strakastruka
