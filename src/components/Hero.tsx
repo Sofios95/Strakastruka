@@ -25,18 +25,13 @@ const Hero: React.FC = () => {
               strakastrüka
             </span>
           </div>
-          
-          {/* MUSIC JOINT: Uppercase για contrast */}
-          <span className="font-anton text-white opacity-40 text-[4vw] md:text-[1.5vw] mt-4 tracking-[0.5em] uppercase">
-            MUSIC JOINT
-          </span>
         </h1>
 
         <div className="mt-12 md:mt-16 flex flex-col items-start gap-8">
           {/* Η κίτρινη γραμμή αφαιρέθηκε όπως ζήτησες πριν, αν τη θες την επαναφέρεις */}
           
-          <h2 className="font-anton text-zinc-400 text-[12px] md:text-[16px] tracking-[0.3em] uppercase max-w-sm leading-relaxed">
-            Exarcheia • Athens <br /> Craft Beer & Raw Sounds
+          <h2 className="font-anton text-zinc-400 text-[12px] md:text-[50px] tracking-[0.3em] uppercase max-w-sm leading-relaxed">
+           Craft Beer & Raw Sounds
           </h2>
           
           <Link 

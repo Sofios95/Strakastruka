@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    /* Αφαιρέθηκε το border-t border-white/10 */
-    <footer id="contact" className="bg-black py-24 px-6 relative z-10">
+    /* 
+       ΔΙΟΡΘΩΣΗ: pt-0 για να κολλήσει στο προηγούμενο section (Gallery).
+    */
+    <footer id="contact" className="bg-black pt-0 pb-24 px-6 relative z-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
         
         {/* LOGO & TAGLINE */}
@@ -84,9 +86,8 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* COPYRIGHT FOOTNOTE */}
-      {/* Αφαίρεσα και εδώ το border-t border-white/5 */}
-      <div className="max-w-7xl mx-auto mt-24 pt-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+      {/* COPYRIGHT & DEV INFO */}
+      <div className="max-w-7xl mx-auto mt-12 pt-10 flex flex-col sm:flex-row justify-between items-center gap-6 border-t border-white/5">
         <div className="flex items-center gap-4">
           <img 
             src="/strakastruka-logo2.png" 
@@ -94,9 +95,26 @@ const Footer = () => {
             className="h-12 md:h-16 w-auto grayscale invert brightness-200" 
           />
         </div>
-        <p className="font-anton text-[10px] md:text-[12px] text-zinc-700 uppercase tracking-[0.6em]">
-          Built for the underground
-        </p>
+
+        <div className="flex flex-col items-center sm:items-end gap-3">
+          <p className="font-anton text-[10px] md:text-[20px] text-zinc-700 uppercase tracking-[0.6em]">
+            Built for the underground
+          </p>
+          
+          <div className="flex items-center gap-4">
+  <span className="text-zinc-600 font-anton text-[16px] uppercase tracking-widest">
+    Made by{' '}
+    <a 
+      href="https://github.com/Sofios95" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="inline-block text-zinc-800 transition-all duration-300 ease-in-out hover:text-orange-500 hover:scale-110 hover:-translate-y-1"
+    >
+      DevSof
+    </a>
+  </span>
+</div>
+        </div>
       </div>
     </footer>
   );
