@@ -70,7 +70,7 @@ export default function Menu() {
                     <span className="font-black text-xl md:text-2xl uppercase italic tracking-tight leading-tight group-hover:bg-black group-hover:text-white transition-colors duration-200">
                       {item.name}
                     </span>
-                    <span className="font-industrial text-2xl md:text-3xl ml-4 whitespace-nowrap">
+                    <span className="font-black text-2xl md:text-3xl ml-4 whitespace-nowrap">
                       {item.price}
                     </span>
                   </div>

@@ -1,8 +1,8 @@
 const Footer = () => {
+  // Παίρνουμε το τρέχον έτος δυναμικά
+  const currentYear = new Date().getFullYear();
+
   return (
-    /* 
-       ΔΙΟΡΘΩΣΗ: pt-0 για να κολλήσει στο προηγούμενο section (Gallery).
-    */
     <footer id="contact" className="bg-black pt-0 pb-24 px-6 relative z-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
         
@@ -23,19 +23,27 @@ const Footer = () => {
         {/* GRID SECTIONS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-24 w-full md:w-auto">
           
-          {/* LOCATION */}
+          {/* LOCATION & CONTACT */}
           <div className="flex flex-col gap-6">
             <h4 className="font-rubber text-white tracking-tighter uppercase text-4xl md:text-5xl italic">
               Find us
             </h4>
-            <a 
-              href="https://www.google.com/maps/search/?api=1&query=Ανδρέα+Μεταξά+19+Εξάρχεια" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="font-anton text-zinc-400 text-[15px] md:text-[18px] tracking-widest leading-loose hover:text-[#ffcc00] transition-colors uppercase"
-            >
-              Ανδρέα Μεταξά 19,<br />Εξάρχεια, Αθήνα
-            </a>
+            <div className="flex flex-col gap-4">
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Ανδρέα+Μεταξά+19+Εξάρχεια" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="font-anton text-zinc-400 text-[15px] md:text-[18px] tracking-widest leading-tight hover:text-[#ffcc00] transition-colors uppercase"
+              >
+                Ανδρέα Μεταξά 19,<br />Εξάρχεια, Αθήνα
+              </a>
+<a 
+  href="tel:+302110085366" 
+  className="font-anton text-zinc-400 text-[15px] md:text-[18px] tracking-[0.2em] hover:text-[#ffcc00] transition-colors"
+>
+  ΤΗΛ : 2110085366
+</a>
+            </div>
           </div>
 
           {/* HOURS */}
@@ -94,6 +102,9 @@ const Footer = () => {
             alt="logo" 
             className="h-12 md:h-16 w-auto grayscale invert brightness-200" 
           />
+          <span className="text-zinc-800 font-anton text-[12px] tracking-widest uppercase">
+            © {currentYear} Strakastruka
+          </span>
         </div>
 
         <div className="flex flex-col items-center sm:items-end gap-3">
@@ -102,18 +113,18 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center gap-4">
-  <span className="text-zinc-600 font-anton text-[16px] uppercase tracking-widest">
-    Made by{' '}
-    <a 
-      href="https://github.com/Sofios95" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="inline-block text-zinc-800 transition-all duration-300 ease-in-out hover:text-orange-500 hover:scale-110 hover:-translate-y-1"
-    >
-      DevSof
-    </a>
-  </span>
-</div>
+            <span className="text-zinc-600 font-anton text-[16px] uppercase tracking-widest">
+              Made by{' '}
+              <a 
+                href="https://github.com/Sofios95" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block text-zinc-800 transition-all duration-300 ease-in-out hover:text-orange-500 hover:scale-110 hover:-translate-y-1"
+              >
+                DevSof
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </footer>
