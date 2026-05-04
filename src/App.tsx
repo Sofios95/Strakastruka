@@ -7,32 +7,45 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 import UntappdMenu from './components/UntappdMenu';
-import Menu from './components/Menu'; // <-- Εδώ εισάγουμε το αρχείο με τα Cocktails
+import Menu from './components/Menu';
 
-// Helper για να ξεκινάει η σελίδα από πάνω
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+// --- Smart Scroll Handler (TypeScript Version) ---
+const ScrollHandler: React.FC = () => {
+  const { pathname, hash } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      
+      if (element) {
+        // Χρησιμοποιούμε setTimeout για να βεβαιωθούμε ότι το component έχει γίνει mount
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        
+        return () => clearTimeout(timer); // Cleanup του timer
+      }
+    }
+  }, [pathname, hash]);
+
   return null;
 };
 
-// --- Home Page (Hero + Gallery) ---
-const Home = () => (
+// --- Home Page ---
+const Home: React.FC = () => (
   <main>
     <Hero />
     <Gallery />
   </main>
 );
 
-// --- Menu Page (Beers + Cocktails) ---
-const MenuPage = () => (
+// --- Menu Page ---
+const MenuPage: React.FC = () => (
   <main className="pt-20 bg-white min-h-screen">
-    {/* 1. Το Widget με τις Μπύρες */}
     <UntappdMenu />
-    
-    {/* 2. Ο κατάλογος με Cocktails/Spirits */}
     <Menu />
   </main>
 );
@@ -40,7 +53,8 @@ const MenuPage = () => (
 function App() {
   return (
     <Router>
-      <ScrollToTop />
+      <ScrollHandler />
+      
       <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
         <Navbar />
         

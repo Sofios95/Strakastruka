@@ -1,10 +1,11 @@
 const Footer = () => {
-  // Παίρνουμε το τρέχον έτος δυναμικά
   const currentYear = new Date().getFullYear();
 
   return (
+    /* Το ID είναι "contact" για να δουλεύει το link της Navbar */
     <footer id="contact" className="bg-black pt-0 pb-24 px-6 relative z-10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
+        
         {/* LOGO & TAGLINE */}
         <div className="flex flex-col gap-8">
           <img
@@ -21,6 +22,7 @@ const Footer = () => {
 
         {/* GRID SECTIONS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-24 w-full md:w-auto">
+          
           {/* LOCATION & CONTACT */}
           <div className="flex flex-col gap-6">
             <h4 className="font-rubber text-white tracking-tighter uppercase text-4xl md:text-5xl italic">
