@@ -15,7 +15,7 @@ const Footer = () => {
           <p className="font-anton text-zinc-500 text-[14px] md:text-[16px] tracking-[0.2em] uppercase leading-relaxed max-w-xs opacity-60">
             Music Joint & Beer Bar <br />
             Exarcheia. Raw sounds. <br />
-            Clean drinks. Craft beers.
+            Booze. Craft beers.
           </p>
         </div>
 

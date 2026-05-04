@@ -45,9 +45,9 @@ const menuData: MenuCategory[] = [
     ]
   },
   {
-    category: "ΑΛΛΑ (OTHERS)",
+    category: "ΑΛΛΑ (REST)",
     items: [
-      { name: "COCA COLA", price: "3€" },
+      { name: "SOFT DRINKS", price: "3€" },
       { name: "SOUROTI", price: "3€" },
     ]
   }
