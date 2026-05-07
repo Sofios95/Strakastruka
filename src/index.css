@@ -3,17 +3,16 @@
 /* 1. ΓΡΑΜΜΑΤΟΣΕΙΡΕΣ & THEME */
 @theme {
   --font-rubber: "RubberB", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --color-strakastruka-orange: #f15a24;
   --font-anton: "Anton", sans-serif;
-  --font-script: "Yellowtail", cursive;
-  
-  /* Alias για να μη σπάσει ο παλιός κώδικας */
-  --font-industrial: "RubberB", sans-serif;
 }
 
 @layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
   @font-face {
     font-family: 'RubberB';
-    /* Χρησιμοποιούμε το absolute path για το Vite */
     src: url('/src/assets/fonts/RubberB-Regular.otf') format('opentype'); 
     font-weight: normal;
     font-style: normal;
@@ -21,21 +20,40 @@
   }
 
   html {
-    font-size: 18px;
+    font-size: 16px; 
     @apply scroll-smooth;
   }
 
   body {
-    @apply bg-black text-white antialiased font-sans overflow-x-hidden;
+    @apply bg-black text-white antialiased font-inter overflow-x-hidden;
+    font-style: normal;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    font-style: normal;
+  }
+
+  /* Universal reset για να είμαστε σίγουροι ότι τίποτα δεν ξεφεύγει σε πλάγια */
   * {
     @apply m-0 p-0 box-border;
+    font-style: normal;
   }
 }
 
 /* 2. CUSTOM UTILITIES */
 @layer utilities {
+  /* Η ΜΟΝΗ ΚΑΙ ΣΩΣΤΗ ΕΚΔΟΣΗ ΤΗΣ FONT-BRAND */
+  .font-brand {
+  font-family: var(--font-rubber);
+  text-transform: lowercase !important;
+  font-style: normal !important; /* ΠΟΥΘΕΝΑ italics */
+  /* Μην το παρακάνεις με το spacing, άσε τα γράμματα να αναπνεύσουν για να φαίνονται οι ενώσεις */
+  letter-spacing: -0.02em !important; 
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
   .text-outline-white {
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
@@ -43,6 +61,10 @@
 
   .bg-noise {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  
+  .border-orange {
+    border-color: #f15a24;
   }
 }
 
@@ -58,36 +80,13 @@
 .animate-glitch { animation: glitch 0.25s cubic-bezier(.25,.46,.45,.94) both infinite; }
 
 /* 4. UNTAPPD WIDGET FIXES */
-.untappd-menu-header, .untappd-section-header, .untappd-menu-updated {
-    display: none !important;
-}
-
-#menu-container .untappd-menu {
-    background: transparent !important;
-    border: none !important;
-    padding-top: 0 !important;
-}
-
 #menu-container * {
-    font-family: var(--font-anton) !important;
+    font-family: var(--font-inter) !important;
+    text-transform: lowercase !important;
+    font-style: normal !important;
 }
 
 /* 5. UI ELEMENTS */
-.selection\:bg-white ::selection {
-  background-color: white;
-  color: black;
-}
-img { @apply transition-all duration-700 ease-in-out; }
-.hr-industrial { @apply h-[2px] bg-white opacity-20 w-full; }
-/* Εξαφανίζει το header του Untappd (λογότυπο, διεύθυνση, όνομα μαγαζιού) */
-#ut-menu .ut-menu-header, 
-.ut-menu-header,
-.untappd-header {
-    display: none !important;
-}
-
-/* Εξαφανίζει την ημερομηνία ενημέρωσης (Updated on...) */
-#ut-menu .ut-menu-updated,
-.ut-menu-updated {
-    display: none !important;
+.hr-orange { 
+  @apply h-[2px] bg-strakastruka-orange w-full opacity-100 border-none; 
 }

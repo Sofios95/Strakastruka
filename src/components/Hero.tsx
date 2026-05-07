@@ -18,25 +18,27 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black/60 z-10"></div>
 
       <div className="relative z-20 w-full max-w-[1800px] mx-auto">
-        <h1 className="flex flex-col items-start select-none">
-          {/* STRAKASTRÜKA: Πεζά γράμματα για αυθεντικό logo vibe */}
-          <div className="flex flex-col leading-[0.8] tracking-[-0.07em] drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-            <span className="font-rubber text-[10vw] md:text-[8vw] text-white opacity-100 italic lowercase">
-              strakastrüka
-            </span>
-          </div>
-        </h1>
+        <p className="select-none">
+  {/* Μην βάζεις tracking-[-0.07em] εδώ, άστο να το πάρει από το CSS */}
+  <span className="font-brand text-[9vw] md:text-[6vw] text-white leading-none block antialiased">
+    strakastrüka
+  </span>
+</p>
 
-        <div className="mt-12 md:mt-16 flex flex-col items-start gap-8">
-          {/* Η κίτρινη γραμμή αφαιρέθηκε όπως ζήτησες πριν, αν τη θες την επαναφέρεις */}
+        <div className="mt-12 md:mt-16 flex flex-col items-start gap-12">
+          {/* Πορτοκαλί διαχωριστική γραμμή #f15a24 */}
+          <div className="h-[4px] w-32 md:w-56 bg-[#f15a24]"></div>
           
-          <h2 className="font-anton text-zinc-400 text-[12px] md:text-[50px] tracking-[0.3em] uppercase max-w-sm leading-relaxed">
-           Craft Beer & Raw Sounds
+          {/* Tagline: Inter Black (Μεγάλα γράμματα για desktop) */}
+          <h2 className="font-inter font-black text-zinc-300 text-[28px] md:text-[80px] tracking-tighter uppercase max-w-5xl leading-[0.85]">
+            Craft Beer & <br />
+            Raw Sounds
           </h2>
           
+          {/* Button: Πορτοκαλί #f15a24 */}
           <Link 
             to="/menu" 
-            className="font-anton px-10 py-4 border-2 border-white/20 text-[12px] md:text-[14px] tracking-[0.5em] uppercase hover:bg-white hover:text-black transition-all duration-500"
+            className="font-inter font-extrabold px-14 py-6 border-2 border-[#f15a24] text-[#f15a24] text-[18px] md:text-[24px] tracking-[0.2em] uppercase hover:bg-[#f15a24] hover:text-white transition-all duration-500"
           >
             Explore the menu
           </Link>

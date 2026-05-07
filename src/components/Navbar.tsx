@@ -16,13 +16,13 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navBg = !isHomePage || isScrolled 
-    ? 'bg-black/95 backdrop-blur-sm py-2 shadow-2xl' 
+    ? 'bg-black/95 backdrop-blur-md py-2 shadow-2xl border-b border-white/5' 
     : 'bg-transparent py-4';
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 px-6 flex justify-between items-center transition-all duration-500 ${navBg}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 px-6 md:px-12 flex justify-between items-center transition-all duration-500 ${navBg}`}>
       
-      {/* Logo Section */}
+      {/* Logo Section - Το επαναφέραμε! */}
       <Link to="/" className="group flex items-center">
         <img 
           src={logo} 
@@ -31,29 +31,34 @@ const Navbar: React.FC = () => {
         />
       </Link>
 
-      {/* Menu Links */}
-      <div className="flex gap-6 md:gap-8 items-center">
-        <Link 
-          to="/" 
-          className="font-anton text-[13px] md:text-[15px] tracking-[0.4em] uppercase text-white hover:text-[#ffcc00] transition-colors"
-        >
-          Home
-        </Link>
+      {/* Right Side: Info & Navigation */}
+      <div className="flex gap-8 md:gap-12 items-center">
+        
+        
 
-        <Link 
-          to="/menu" 
-          className="font-anton text-[13px] md:text-[15px] tracking-[0.4em] uppercase text-white hover:text-[#ffcc00] transition-colors border border-white/20 px-3 py-1 rounded-sm"
-        >
-          Menu
-        </Link>
+        {/* Links με Inter - Πορτοκαλί Hover */}
+        <div className="flex gap-6 md:gap-10 items-center">
+          <Link 
+            to="/" 
+            className="font-inter font-black text-[16px] md:text-[20px] uppercase text-white hover:text-[#f15a24] transition-colors antialiased"
+          >
+            Home
+          </Link>
 
-        {/* Εδώ το href πρέπει να είναι #contact για να ταιριάζει με το ID του Footer */}
-        <a 
-          href={isHomePage ? "#contact" : "/#contact"} 
-          className="font-anton text-[13px] md:text-[15px] tracking-[0.4em] uppercase text-white hover:text-[#ffcc00] transition-colors"
-        >
-          Contact
-        </a>
+          <Link 
+            to="/menu" 
+            className="font-inter font-black text-[16px] md:text-[20px] uppercase text-white hover:text-[#f15a24] transition-colors antialiased"
+          >
+            Menu
+          </Link>
+
+          <a 
+            href={isHomePage ? "#contact" : "/#contact"} 
+            className="font-inter font-black text-[16px] md:text-[20px] uppercase text-white hover:text-[#f15a24] transition-colors antialiased"
+          >
+            Contact
+          </a>
+        </div>
       </div>
     </nav>
   );

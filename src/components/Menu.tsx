@@ -55,27 +55,32 @@ const menuData: MenuCategory[] = [
 
 export default function Menu() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20 bg-white text-black font-sans min-h-screen">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-4">
+    <div className="max-w-7xl mx-auto px-6 py-24 bg-white text-black font-inter min-h-screen antialiased">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
         {menuData.map((section, idx) => (
-          <div key={idx} className="mb-16">
-            <h2 className="font-industrial text-5xl md:text-6xl uppercase italic tracking-tighter border-b-[12px] border-black mb-10 pb-2">
-              {section.category}
+          <div key={idx} className="mb-24">
+            {/* Category Header: Τεράστιο και Bold */}
+            <h2 className="font-black text-7xl md:text-8xl uppercase tracking-tighter border-b-[20px] border-black mb-16 pb-6 leading-none">
+              <p>{section.category}</p>
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-14">
               {section.items.map((item, i) => (
-                <div key={i} className="flex flex-col border-b border-black/5 pb-4 group">
-                  <div className="flex justify-between items-baseline">
-                    <span className="font-black text-xl md:text-2xl uppercase italic tracking-tight leading-tight group-hover:bg-black group-hover:text-white transition-colors duration-200">
+                <div key={i} className="flex flex-col border-b-2 border-black/10 pb-8 group">
+                  <div className="flex justify-between items-start gap-4">
+                    {/* Item Name: Μεγαλύτερο (text-3xl) */}
+                    <p className="font-black text-2xl md:text-4xl uppercase tracking-tight leading-tight group-hover:bg-black group-hover:text-white transition-colors duration-200 px-1">
                       {item.name}
-                    </span>
-                    <span className="font-black text-2xl md:text-3xl ml-4 whitespace-nowrap">
+                    </p>
+                    {/* Price: Πολύ μεγάλο για να μη ρωτάνε "πόσο κάνει;" */}
+                    <p className="font-black text-3xl md:text-5xl whitespace-nowrap leading-none">
                       {item.price}
-                    </span>
+                    </p>
                   </div>
+                  
                   {item.info && (
-                    <p className="text-[10px] md:text-[11px] uppercase tracking-widest font-bold mt-2 text-zinc-500 leading-relaxed max-w-[90%]">
+                    /* Info: Μεγαλύτερο και πιο σκούρο (zinc-700) για ανάγνωση */
+                    <p className="font-bold text-sm md:text-base uppercase tracking-wider mt-7 text-zinc-750 leading-relaxed max-w-[95%]">
                       {item.info}
                     </p>
                   )}
@@ -86,19 +91,27 @@ export default function Menu() {
         ))}
       </div>
       
-      {/* Footer του Menu */}
-      <div className="text-center mt-20 border-t-4 border-black pt-12 flex flex-col items-center">
-        <img 
-          src="/strakastruka-logo.jpg" 
-          alt="logo" 
-          className="h-16 object-contain mb-4 grayscale" 
-        />
-        <p className="font-industrial text-2xl lowercase italic tracking-[0.2em]">
+      {/* Footer: Επιβλητικό */}
+      <div className="text-center mt-40 border-t-[12px] border-black pt-20 flex flex-col items-center">
+        <div className="w-24 h-24 bg-black rounded-full flex items-center justify-center mb-8">
+           <img 
+            src="/strakastruka-logo.jpg" 
+            alt="logo" 
+            className="h-14 w-14 object-contain grayscale invert" 
+          />
+        </div>
+        
+        <p className="font-brand text-5xl md:text-8xl lowercase tracking-widest text-black">
           strakastrüka
         </p>
-        <p className="text-[10px] uppercase tracking-[0.5em] mt-2 font-black opacity-30 italic">
-          Music Joint / Athens
-        </p>
+        
+        <div className="flex items-center gap-6 mt-8">
+          <div className="h-[4px] w-16 bg-[#f15a24]"></div>
+          <p className="font-brand text-lg md:text-xl uppercase tracking-[0.4em] opacity-40">
+            Music Joint / Athens
+          </p>
+          <div className="h-[4px] w-16 bg-[#f15a24]"></div>
+        </div>
       </div>
     </div>
   );

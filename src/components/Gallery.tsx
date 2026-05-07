@@ -42,13 +42,13 @@ const Gallery: React.FC = () => {
     <section id="gallery" className="bg-black py-24 px-6 overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         
-        {/* Title με Rubber B - Πιο μαζεμένο μέγεθος για industrial αισθητική */}
+        {/* Title: Approved Chaos - Επαναφορά στο αρχικό στυλ με <p> */}
         <div className="mb-20">
-          <h2 className="font-rubber text-5xl md:text-8xl uppercase italic tracking-tighter text-white leading-[0.8]">
-            APPROVED <br /> 
-            <span className="text-outline-white group-hover:text-white transition-all duration-500">CHAOS</span>
-          </h2>
-          <div className="h-[2px] w-20 bg-[#ffcc00] mt-6"></div>
+          <div className="font-brand text-5xl md:text-8xl   tracking-tighter text-white leading-[0.8] antialiased select-none">
+            <p>Approved</p>
+            <p className="text-outline-white hover:text-white transition-all duration-500">CHAOS</p>
+          </div>
+          <div className="h-[2px] w-20 bg-[#f15a24] mt-6"></div>
         </div>
 
         {/* Chaos Grid */}
@@ -56,7 +56,7 @@ const Gallery: React.FC = () => {
           {photos.map((p, i) => (
             <div 
               key={i} 
-              className={`relative group overflow-hidden bg-zinc-900 border border-white/5 ${p.size} ${p.rotation} transition-all duration-700 hover:rotate-0 hover:scale-[1.02] hover:z-10 hover:border-white/30 shadow-2xl`}
+              className={`relative group overflow-hidden bg-zinc-900 border border-white/5 ${p.size} ${p.rotation} transition-all duration-700 hover:rotate-0 hover:scale-[1.02] hover:z-10 hover:border-[#f15a24]/50 shadow-2xl`}
             >
               <img 
                 src={p.src} 
@@ -64,21 +64,20 @@ const Gallery: React.FC = () => {
                 className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-1000" 
               />
               
-              {/* Overlay on Hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                <p className="text-white font-anton text-xl italic uppercase tracking-tighter transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  RAW MOMENT
+                <p className="text-white font-inter font-black text-xl uppercase tracking-tighter transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="text-[#f15a24]">raw</span> moment
                 </p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom Section: Nights */}
         <div className="mt-24 flex flex-col items-center">
-          <div className="w-full h-[1px] bg-white/10 mb-8"></div>
-          <p className="font-script text-zinc-500 text-3xl md:text-5xl -rotate-2 opacity-40 hover:opacity-100 transition-opacity duration-500 cursor-default">
-            strakastrüka nights...
+          <div className="w-full h-[1px] bg-white/10 mb-12"></div>
+          <p className="font-brand text-zinc-600 text-4xl md:text-7xl opacity-40 hover:opacity-100 hover:text-white transition-all duration-500 cursor-default antialiased uppercase">
+            strakastrüka nights
           </p>
         </div>
       </div>
