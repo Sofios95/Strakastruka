@@ -90,3 +90,7 @@
 .hr-orange { 
   @apply h-[2px] bg-strakastruka-orange w-full opacity-100 border-none; 
 }
+/* Εξαφανίζει το ενοχλητικό badge του reCAPTCHA από τη γωνία */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}

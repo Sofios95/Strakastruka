@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'; // Εισαγωγή του Provider
 
 // Components
 import Navbar from './components/Navbar';
@@ -52,20 +53,23 @@ const MenuPage: React.FC = () => (
 
 function App() {
   return (
-    <Router>
-      <ScrollHandler />
-      
-      <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
-        <Navbar />
+    // Τυλίγουμε όλη την εφαρμογή με τον Provider για να λειτουργεί το reCAPTCHA v3 παντού
+    <GoogleReCaptchaProvider reCaptchaKey="6Ld7I_UsAAAAAKYAurK5JLNuNZomdjGif04Whav8">
+      <Router>
+        <ScrollHandler />
         
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<MenuPage />} />
-        </Routes>
+        <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
+          <Navbar />
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<MenuPage />} />
+          </Routes>
 
-        <Footer />
-      </div>
-    </Router>
+          <Footer />
+        </div>
+      </Router>
+    </GoogleReCaptchaProvider>
   );
 }
 
