@@ -15,7 +15,7 @@ const menuData: MenuCategory[] = [
     items: [
       { name: "MARGARITA", price: "9€", info: "(TEQUILA, TRIPLE SEC, LIME JUICE, AGAVE SYRUP, SALTED RIM, SLICE LIME)" },
       { name: "PALOMA", price: "9€", info: "(TEQUILA, LIME JUICE, GRAPEFRUIT SODA, SLICE LIME, SALTED RIM)" },
-      { name: "MOHITO", price: "9€", info: "(RUM, HALF A LIME, MINT LEAVES, DARK SUGAR, SODA, SLICE LIME, BITTER DROPS)" },
+      { name: "MOJITO", price: "9€", info: "(RUM, HALF A LIME, MINT LEAVES, DARK SUGAR, SODA, SLICE LIME, BITTER DROPS)" },
       { name: "CAIPIRINHA", price: "9€", info: "(CACHACA, HALF A LIME, DARK SUGAR, SLICE LIME, BITTER DROPS)" },
       { name: "CAIPIROSKA", price: "9€", info: "(VODKA, HALF A LIME, DARK SYRUP, SLICE LIME)" },
       { name: "PINK APEROL", price: "9€", info: "(APEROL, LIME JUICE, GRAPEFRUIT SODA, SLICE ORANGE, BITTER DROPS)" },
